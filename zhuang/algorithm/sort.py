@@ -31,10 +31,9 @@ def qsort(array, begin, end):
 
             a = a + 1
             b = b - 1
-            time.sleep(1)
-            print(array)
 
-
+    time.sleep(0.5)
+    print(array)
 
     if begin < (pIndex - 1):
         qsort(array, begin, pIndex - 1)
