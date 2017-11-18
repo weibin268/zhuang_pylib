@@ -6,7 +6,7 @@ class TestHttpClient(unittest.TestCase):
 
     def test_post(self):
         client = HttpClient("https://www.baidu.com");
-        result = client.post("","")
+        result = client.post("")
         print(result)
         self.assertEqual(1,1,'error')
 
