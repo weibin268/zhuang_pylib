@@ -1,22 +1,44 @@
 def qsort(array, begin, end):
 
-    for i in range(len(array)):
+    if (end - begin) == 1:
+        if array[end] > array[begin]:
+            temp = array[begin]
+            array[begin] = array[end]
+            array[end] = temp
 
-        pivot = array[pivot]
-        b = begin + 1
-        e = end
+        return 0
 
-        while b < e:
-            if array[b] < pivot:
+    for i in range(begin, end):
+
+        pIndex = begin
+        pValue = array[pIndex]
+        a = begin + 1
+        b = end
+
+        while a <= b:
+            if array[a] < pValue:
+                temp = array[a]
+                array[a] = array[pIndex]
+                array[pIndex] = temp
+                pIndex = a
+
+            if array[b] < pValue:
                 temp = array[b]
-                array[pivot] = temp
+                array[b] = array[pIndex]
+                array[pIndex] = temp
+                pIndex = b
 
-            b = b + 1
-            e = e - 1
+            a = a + 1
+            b = b - 1
+
+    if begin<(pIndex-1):
+        qsort(array, begin, pIndex - 1)
+    if (pIndex+1)<end:
+        qsort(array, pIndex + 1, end)
 
 
-nums = [11, 2, 1, 34, 12]
+nums = [11, 2, 1, 34, 12, 34, 134, 566, 11, 3234, 123, 44, 51]
 
-qsort(nums, 0, len(nums))
+qsort(nums, 0, len(nums) - 1)
 
 print(nums)
