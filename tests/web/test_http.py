@@ -8,10 +8,11 @@ class TestHttpClient(unittest.TestCase):
         client = HttpClient("https://www.baidu.com")
         result = client.post("")
         print(result)
-        self.assertEqual(1,1,'error')
+        self.assertEqual(1, 1, 'error')
 
     def test_a(self):
         print('123')
+
 
 if __name__ == '__main__':
     unittest.main()
