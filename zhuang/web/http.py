@@ -7,12 +7,8 @@ class HttpClient:
 
     def post(self, url, obj_data=""):
         req = urllib.request.Request(self.base_url + url)
-        req.add_header(
-            "Content-Type", "application/x-www-form-urlencoded;charset=utf-8")
-
+        req.add_header("Content-Type", "application/x-www-form-urlencoded;charset=utf-8")
         form_data = urllib.parse.urlencode(obj_data)
         form_data = form_data.encode('utf-8')
-
         res = urllib.request.urlopen(req, form_data)
-
         return res.read().decode()
