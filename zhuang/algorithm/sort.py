@@ -1,5 +1,6 @@
 import time
 
+
 def qsort(array, begin, end):
     if (end - begin) == 1:
         if array[end] > array[begin]:
@@ -41,7 +42,6 @@ def qsort(array, begin, end):
         qsort(array, pIndex + 1, end)
 
 
-
 import random
 
 nums = []
@@ -52,7 +52,4 @@ print(nums)
 
 qsort(nums, 0, len(nums) - 1)
 
-#print(nums)
-
-
-
+# print(nums)
